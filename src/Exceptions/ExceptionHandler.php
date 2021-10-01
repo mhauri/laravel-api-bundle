@@ -54,7 +54,7 @@ class ExceptionHandler implements IlluminateExceptionHandler
                 $response = ApiResponse::unauthorized();
                 break;
             default:
-                $response = ApiResponse::badRequest(Response::HTTP_INTERNAL_SERVER_ERROR, $exception->getMessage());
+                $response = ApiResponse::badRequest(Response::HTTP_INTERNAL_SERVER_ERROR, $e->getMessage());
                 break;
         }
 
