@@ -32,5 +32,3 @@ jobs:
         run: make lint
       - name: Run unit tests
         run: make unit
-      - name: Run static analysis
-        run: make static
