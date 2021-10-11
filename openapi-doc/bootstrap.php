@@ -184,7 +184,7 @@ if (!function_exists('api_default_responses')) {
  *      )
  *  ),
  *  @OA\SecurityScheme(
- *      securityScheme="API-BUNDLE",
+ *      securityScheme="Api",
  *      name=DOC_API_SECURITY_NAME,
  *      description=DOC_API_SECURITY_DESCRIPTION,
  *      type=DOC_API_SECURITY_TYPE,
