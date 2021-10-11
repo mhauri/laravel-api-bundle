@@ -24,6 +24,7 @@ if (!function_exists('api_default_responses')) {
 /**
  * @OA\Info(
  *   title=DOC_API_NAME,
+ *   description=DOC_API_DESCRIPTION,
  *   version=DOC_API_VERSION,
  *   @OA\Contact(
  *     email=DOC_API_CONTACT,
