@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace MHauri\ApiBundle\Console\Commands;
 
 use Illuminate\Console\Command;
+use OpenApi\Annotations\OpenApi;
+use OpenApi\Annotations\SecurityScheme;
 use OpenApi\Generator;
 
 class DocumentationGenerateCommand extends Command
@@ -23,13 +25,25 @@ class DocumentationGenerateCommand extends Command
         define('DOC_API_CONTACT', config('api.contact'));
         define('DOC_API_VERSION', $version);
 
-        $openapi = Generator::scan([api_bootstrap(), api_default_responses(), app_path()]);
+        $openApi = Generator::scan([api_bootstrap(), api_default_responses(), app_path()]);
+        $this->mergeSecurityConfig($openApi);
         $this->output->writeln(
-            $openapi->toJson(
+            $openApi->toJson(
                 JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE
             )
         );
 
         return self::SUCCESS;
+    }
+
+    private function mergeSecurityConfig(OpenApi $openApi)
+    {
+        $security = config('api.security');
+        foreach ($security as $name => $params) {
+            $schema = ['securityScheme' => $name];
+            $schema = array_merge($schema, $params);
+            $test = new SecurityScheme($schema);
+            $openApi->components->merge([$test]);
+        }
     }
 }
