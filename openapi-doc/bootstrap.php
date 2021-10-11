@@ -45,12 +45,14 @@ if (!function_exists('api_default_responses')) {
  *              property="error",
  *              readOnly=true,
  *              format="int32",
+ *              type="integer",
  *              example=400
  *          ),
  *          @OA\Property(
  *              property="message",
  *              readOnly=true,
  *              format="string",
+ *              type="string",
  *              example="Bad Request"
  *          ),
  *      )
@@ -63,12 +65,14 @@ if (!function_exists('api_default_responses')) {
  *              property="error",
  *              readOnly=true,
  *              format="int32",
+ *              type="integer",
  *              example=401
  *          ),
  *          @OA\Property(
  *              property="message",
  *              readOnly=true,
  *              format="string",
+ *              type="string",
  *              example="Unauthorized"
  *          ),
  *      )
@@ -81,12 +85,14 @@ if (!function_exists('api_default_responses')) {
  *              property="error",
  *              readOnly=true,
  *              format="int32",
+ *              type="integer",
  *              example=403
  *          ),
  *          @OA\Property(
  *              property="message",
  *              readOnly=true,
  *              format="string",
+ *              type="string",
  *              example="Forbidden"
  *          ),
  *      )
@@ -99,12 +105,14 @@ if (!function_exists('api_default_responses')) {
  *              property="error",
  *              readOnly=true,
  *              format="int32",
+ *              type="integer",
  *              example=404
  *          ),
  *          @OA\Property(
  *              property="message",
  *              readOnly=true,
  *              format="string",
+ *              type="string",
  *              example="Not Found"
  *          ),
  *      )
@@ -117,12 +125,14 @@ if (!function_exists('api_default_responses')) {
  *              property="error",
  *              readOnly=true,
  *              format="int32",
+ *              type="integer",
  *              example=429
  *          ),
  *          @OA\Property(
  *              property="message",
  *              readOnly=true,
  *              format="string",
+ *              type="string",
  *              example="Too Many Requests"
  *          ),
  *      )
@@ -135,12 +145,14 @@ if (!function_exists('api_default_responses')) {
  *              property="error",
  *              readOnly=true,
  *              format="int32",
+ *              type="integer",
  *              example=500
  *          ),
  *          @OA\Property(
  *              property="message",
  *              readOnly=true,
  *              format="string",
+ *              type="string",
  *              example="Server Error"
  *          ),
  *      )
