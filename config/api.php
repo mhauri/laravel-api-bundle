@@ -60,14 +60,36 @@ return [
     | Security
     |--------------------------------------------------------------------------
     |
-    | Security Schema
+    | Security Schemas
     |
     */
     'security' => [
-        'scheme' => env('API_SECURITY_SCHEME', 'bearer'),
-        'name' => env('API_SECURITY_NAME', 'Authentication'),
-        'description' => env('API_SECURITY_DESCRIPTION', 'Value: Bearer {jwt}'),
-        'type' => env('API_SECURITY_SCHEME', 'apiKey'),
-        'in' => env('API_SECURITY_SCHEME', 'header'),
+//        'BasicAuth' => [
+//            'type' => 'http',
+//            'scheme' => 'basic',
+//        ],
+//        'BearerAuth' => [
+//            'type' => 'http',
+//            'scheme' => 'bearer',
+//        ],
+//        'ApiKeyAuth' => [
+//            'type' => 'apiKey',
+//            'name' => 'X-API-Key',
+//            'in' => 'header',
+//        ],
+//        'OpenID' => [
+//            'type' => 'openIdConnect',
+//            'openIdConnectUrl' => 'https://',
+//        ],
+//        'Oauth2' => [
+//            'type' => 'oauth2',
+//            'flows' => [
+//                'authorizationCode' => [
+//                    'authorizationUrl' => '',
+//                    'tokenUrl' => '',
+//                    'scopes' => []
+//                ]
+//            ]
+//        ]
     ],
 ];

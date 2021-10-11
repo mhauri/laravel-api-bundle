@@ -183,13 +183,5 @@ if (!function_exists('api_default_responses')) {
  *          ),
  *      )
  *  ),
- *  @OA\SecurityScheme(
- *      securityScheme="Api",
- *      name=DOC_API_SECURITY_NAME,
- *      description=DOC_API_SECURITY_DESCRIPTION,
- *      type=DOC_API_SECURITY_TYPE,
- *      scheme=DOC_API_SECURITY_SCHEME,
- *      in=DOC_API_SECURITY_IN,
- *  )
  * )
  */
