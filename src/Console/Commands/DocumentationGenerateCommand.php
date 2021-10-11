@@ -19,14 +19,9 @@ class DocumentationGenerateCommand extends Command
         $version = config('api.version');
 
         define('DOC_API_NAME', $name);
+        define('DOC_API_DESCRIPTION', config('api.description'));
         define('DOC_API_CONTACT', config('api.contact'));
         define('DOC_API_VERSION', $version);
-
-        define('DOC_API_SECURITY_SCHEME', config('api.security.scheme'));
-        define('DOC_API_SECURITY_NAME', config('api.security.name'));
-        define('DOC_API_SECURITY_DESCRIPTION', config('api.security.description'));
-        define('DOC_API_SECURITY_TYPE', config('api.security.type'));
-        define('DOC_API_SECURITY_IN', config('api.security.in'));
 
         $openapi = Generator::scan([api_bootstrap(), api_default_responses(), app_path()]);
         $this->output->writeln(
