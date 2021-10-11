@@ -27,6 +27,7 @@ class DocumentationGenerateCommand extends Command
 
         $openApi = Generator::scan([api_bootstrap(), api_default_responses(), app_path()]);
         $this->mergeSecurityConfig($openApi);
+        $this->addPrefix($openApi);
         $this->output->writeln(
             $openApi->toJson(
                 JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE
@@ -34,6 +35,15 @@ class DocumentationGenerateCommand extends Command
         );
 
         return self::SUCCESS;
+    }
+
+    private function addPrefix(OpenApi $openApi)
+    {
+        if (config('api.prefix')) {
+            foreach ($openApi->paths as $path) {
+                $path->path = '/'.config('api.prefix').$path->path;
+            }
+        }
     }
 
     private function mergeSecurityConfig(OpenApi $openApi)
