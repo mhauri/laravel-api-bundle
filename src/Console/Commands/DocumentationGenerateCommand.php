@@ -48,12 +48,16 @@ class DocumentationGenerateCommand extends Command
 
     private function mergeSecurityConfig(OpenApi $openApi)
     {
-        $security = config('api.security');
-        foreach ($security as $name => $params) {
+        $security = [];
+        foreach (config('api.security') as $name => $params) {
             $schema = ['securityScheme' => $name];
             $schema = array_merge($schema, $params);
-            $test = new SecurityScheme($schema);
-            $openApi->components->merge([$test]);
+            $securitySchema = new SecurityScheme($schema);
+            $openApi->components->merge([$securitySchema]);
+            $security[] = [$name => []];
+        }
+        if ($security) {
+            $openApi->security = $security;
         }
     }
 }
