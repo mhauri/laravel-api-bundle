@@ -60,6 +60,30 @@ if (!function_exists('api_default_responses')) {
  *      )
  *  ),
  *  @OA\Response(
+ *      response="301",
+ *      description="Moved Permanently Response",
+ *     @OA\Header(
+ *          header="Location",
+ *          description="Location of the Resource",
+ *          @OA\Schema(
+ *              type="string",
+ *              format="string"
+ *          )
+ *      ),
+ *  ),
+ *  @OA\Response(
+ *      response="302",
+ *      description="Moved Temporarily Response",
+ *     @OA\Header(
+ *          header="Location",
+ *          description="Location of the Resource",
+ *          @OA\Schema(
+ *              type="string",
+ *              format="string"
+ *          )
+ *      ),
+ *  ),
+ *  @OA\Response(
  *      response="401",
  *      description="Unathorized Response",
  *      @OA\JsonContent(
@@ -159,5 +183,13 @@ if (!function_exists('api_default_responses')) {
  *          ),
  *      )
  *  ),
+ *  @OA\SecurityScheme(
+ *      securityScheme="API-BUNDLE",
+ *      name=DOC_API_SECURITY_NAME,
+ *      description=DOC_API_SECURITY_DESCRIPTION,
+ *      type=DOC_API_SECURITY_TYPE,
+ *      scheme=DOC_API_SECURITY_SCHEME,
+ *      in=DOC_API_SECURITY_IN,
+ *  )
  * )
  */
