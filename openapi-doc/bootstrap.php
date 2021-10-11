@@ -35,6 +35,8 @@ if (!function_exists('api_default_responses')) {
  *      description="Success Response",
  *      @OA\JsonContent(
  *          example="{}",
+ *          format="string",
+ *          type="string",
  *      )
  *  ),
  *  @OA\Response(
