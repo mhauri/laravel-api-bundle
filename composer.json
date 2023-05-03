@@ -12,7 +12,7 @@
     "require": {
         "php": "^7.4|^8.0||^8.1||^8.2",
         "ext-json": "*",
-        "zircote/swagger-php": "^3.2",
+        "zircote/swagger-php": "^3.2|^4.7",
         "laravel/framework": "^8.0|^9.0|^10.0"
     },
     "require-dev": {
