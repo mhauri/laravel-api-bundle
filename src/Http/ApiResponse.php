@@ -46,7 +46,7 @@ class ApiResponse extends JsonResponse
     public static function notFound(): self
     {
         return new self(
-            self::response(Response::HTTP_NOT_FOUND, sprintf('Route not found: %s', $_SERVER['REQUEST_URI'])),
+            self::response(Response::HTTP_NOT_FOUND, sprintf('Resource not found: %s', $_SERVER['REQUEST_URI'])),
             Response::HTTP_NOT_FOUND
         );
     }
@@ -81,7 +81,7 @@ class ApiResponse extends JsonResponse
     private static function response(int $code, string $message)
     {
         return [
-            'code' => $code,
+            'statusCode' => $code,
             'message' => $message,
         ];
     }
