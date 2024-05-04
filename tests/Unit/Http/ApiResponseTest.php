@@ -33,7 +33,7 @@ class ApiResponseTest extends TestCase
     public function testNotFound()
     {
         $_SERVER['REQUEST_URI'] = '/';
-        $this->assertSame(['code' => 404, 'message' => 'Route not found: /'], ApiResponse::notFound()->getObject());
+        $this->assertSame(['code' => 404, 'message' => 'Resource not found: /'], ApiResponse::notFound()->getObject());
     }
 
     public function testTooManyRequests()
