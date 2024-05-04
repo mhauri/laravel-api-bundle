@@ -17,28 +17,28 @@ class ApiResponseTest extends TestCase
 
     public function testBadRequest()
     {
-        $this->assertSame(['code' => 400, 'message' => 'Bad Request'], ApiResponse::badRequest()->getObject());
+        $this->assertSame(['statusCode' => 400, 'message' => 'Bad Request'], ApiResponse::badRequest()->getObject());
     }
 
     public function testUnauthorized()
     {
-        $this->assertSame(['code' => 401, 'message' => 'Unauthorized'], ApiResponse::unauthorized()->getObject());
+        $this->assertSame(['statusCode' => 401, 'message' => 'Unauthorized'], ApiResponse::unauthorized()->getObject());
     }
 
     public function testForbidden()
     {
-        $this->assertSame(['code' => 403, 'message' => 'Forbidden'], ApiResponse::forbidden()->getObject());
+        $this->assertSame(['statusCode' => 403, 'message' => 'Forbidden'], ApiResponse::forbidden()->getObject());
     }
 
     public function testNotFound()
     {
         $_SERVER['REQUEST_URI'] = '/';
-        $this->assertSame(['code' => 404, 'message' => 'Resource not found: /'], ApiResponse::notFound()->getObject());
+        $this->assertSame(['statusCode' => 404, 'message' => 'Resource not found: /'], ApiResponse::notFound()->getObject());
     }
 
     public function testTooManyRequests()
     {
-        $this->assertSame(['code' => 429, 'message' => 'Too Many Requests'], ApiResponse::tooManyRequests()->getObject());
+        $this->assertSame(['statusCode' => 429, 'message' => 'Too Many Requests'], ApiResponse::tooManyRequests()->getObject());
     }
 
     public function testFromDTO()
